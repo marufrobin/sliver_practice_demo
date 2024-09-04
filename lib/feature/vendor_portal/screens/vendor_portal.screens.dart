@@ -10,16 +10,14 @@ class VendorPortalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Vendor Portal'),
-      ),
+      appBar: AppBar(title: const Text('Vendor Portal')),
       body: ExpandableText(
         fakeData.getVendorFakeData().toJson().toString(),
         expandText: 'Show JSON',
         collapseText: 'Hide JSON',
         linkColor: Colors.blue,
-        expandOnTextTap: true,
         collapseOnTextTap: true,
+        expandOnTextTap: true,
         animation: true,
       ),
     );
