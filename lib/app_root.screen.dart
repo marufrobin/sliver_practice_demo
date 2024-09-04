@@ -9,6 +9,8 @@ class AppRootScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Sliver Practice Demo',
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: AppThemes.light,
       darkTheme: AppThemes.dark,
       home: VendorPortalScreen(),
