@@ -11,15 +11,30 @@ class VendorPortalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Vendor Portal')),
-      body: ExpandableText(
-        fakeData.getVendorFakeData().toJson().toString(),
-        expandText: 'Show JSON',
-        collapseText: 'Hide JSON',
-        linkColor: Colors.blue,
-        collapseOnTextTap: true,
-        expandOnTextTap: true,
-        animation: true,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.blueGrey,
+          ),
+        ],
       ),
+    );
+  }
+}
+
+class _VendorText extends StatelessWidget {
+  const _VendorText({this.data});
+  final String? data;
+  @override
+  Widget build(BuildContext context) {
+    return ExpandableText(
+      data ?? "",
+      expandText: 'Show JSON',
+      collapseText: 'Hide JSON',
+      linkColor: Colors.blue,
+      collapseOnTextTap: true,
+      expandOnTextTap: true,
+      animation: true,
     );
   }
 }
